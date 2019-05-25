@@ -5,12 +5,12 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
-<script src="mail/js/jquery.min.js"></script>
-<script src="mail/js/mail.js"></script>
+<script src="./mail/js/jquery.min.js"></script>
+<script src="./mail/js/mail.js"></script>
 
 <body>
 
-    <div id="alert" class="w3-panel w3-red w3-display-container w3-hide">
+    <div id="alert" class="w3-panel w3-yellow w3-display-container w3-card-4 w3-hide">
         <span onclick="this.parentElement.style.display='none'"
             class="w3-button w3-large w3-display-topright">&times;</span>
         <h3 id="alertTitle"></h3>
@@ -51,7 +51,7 @@
         <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
             <div class="w3-rest">
-                <input class="w3-input w3-border" name="message" type="text" placeholder="Message">
+                <textarea class="w3-input w3-border" name="message" type="textarea" placeholder="Message"></textarea>
             </div>
         </div>
 

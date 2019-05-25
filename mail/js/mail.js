@@ -17,12 +17,12 @@ $(document).ready(() => {
 
                     if (status === "success") {
                         if (result.error) {
-                            alert(result.error);
+                            notify("Error!", result.error);
                         } else {
-                            alert(result.title + " " + result.message);
+                            notify(result.title, result.message);
                         }
                     } else {
-                        alert("There seems to be a problem sending your message.");
+                        notify("Error!", "There seems to be a problem sending your message.");
                     }
                     console.log(result);
 
@@ -46,28 +46,28 @@ $(document).ready(() => {
             return false;
         }
 
-        if (mail.name === "") {
+        if (mail.name.trim() === "") {
 
             notify("Missing fields!", "Your name is required!");
 
             return false;
         }
 
-        if (mail.phone === "") {
+        if (mail.phone.trim() === "") {
 
             notify("Missing fields!", "Your phone number is required!");
 
             return false;
         }
 
-        if (mail.email === "") {
+        if (mail.email.trim() === "") {
 
             notify("Missing fields!", "Your email is required!");
 
             return false;
         }
 
-        if (mail.message === "") {
+        if (mail.message.trim() === "") {
 
             notify("Missing fields!", "Your message is required!");
 
@@ -79,8 +79,10 @@ $(document).ready(() => {
     }
 
     function notify(title, message) {
-        
-        alert(title + " " + message);
+
+        $("#alert").removeClass("w3-hide");
+        $("#alert #alertTitle").text(title);
+        $("#alert #alertMessage").html(message);
     }
 
 });

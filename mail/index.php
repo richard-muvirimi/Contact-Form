@@ -25,7 +25,8 @@ $result = $contact->sendMail($toEmail, $CC, $BCC, $subject);
 //clear output buffer
 if (MAIL_DEBUG && ob_get_contents()) {
 
-    $result["error"] = html_entity_decode(html_entity_decode(trim(strip_tags(ob_get_clean()))));
+    //$result["error"] = html_entity_decode(html_entity_decode(trim(strip_tags(ob_get_clean()))));
+    $result["error"] = html_entity_decode(ob_get_clean());
 } else {
     ob_clean();
 }
