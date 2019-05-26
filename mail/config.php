@@ -29,4 +29,4 @@ $BCC = "";
 /**
  *  Debug mode true or false
  */
-define("MAIL_DEBUG", true);
+define("MAIL_DEBUG", false);
